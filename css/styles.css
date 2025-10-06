@@ -43,7 +43,7 @@
 
 
     #success-location {
-    margin-top: 5rem; 
+    margin-top: 0rem; 
 }
 
 @media (min-width: 640px) {
@@ -55,5 +55,22 @@
 @media (min-width: 768px) {
     #success-location {
         margin-top: 0rem;
+    }
+}
+
+
+/* Default styles for dataCard (ensure it fits within the container) */
+#dataCard {
+    transform: none; /* Remove the translate-y-1/2 for mobile */
+    margin-top: 2rem; /* Add some spacing from the search bar */
+    width: 100%; /* Ensure it fits within the container */
+    max-width: 100%; /* Prevent overflow beyond container */
+}
+
+/* Restore original styling for larger screens */
+@media (min-width: 640px) {
+    #dataCard {
+        transform: translateY(50%); /* Reapply the original transform for non-mobile */
+        margin-top: 2.5rem; /* Match the original mt-10 (2.5rem) for medium screens */
     }
 }

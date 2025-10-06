@@ -4,9 +4,9 @@ const errorMessage = document.querySelector('#errorMessage');
 const successMessage = document.querySelector('#success-location');
 let lastRequestTime = 0;
 const RATE_LIMIT_MS = 1000;
-const part1 = 'at_szc6Zpm7';
-const part2 = 'JMMhjeyyL6JSBYj';
-const part3 = '6APx3W';
+const part1 = 'at_IkfUUybrbola'; 
+const part2 = 'usafKqU1f';
+const part3 = 'vebfafcE';
 
 
 
