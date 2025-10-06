@@ -6,7 +6,7 @@
         /* Custom utility for the overlay */
         .hero-bg {
             /* NEW BACKGROUND IMAGE URL: Abstract network and map visualization */
-            background-image: url('/trackmap/images/hero-banner.png');
+            background-image: url('/images/hero-banner.jpg');
             background-size: cover;
             background-position: center;
         }
@@ -15,10 +15,7 @@
     display: contents;
 }
 
-.leaflet-attribution-flag{
-    display: none !important;
-    visibility: hidden !important;
-}
+
         /* A simple CSS spinner */
         .spinner {
             border: 4px solid rgba(255, 255, 255, 0.3);
