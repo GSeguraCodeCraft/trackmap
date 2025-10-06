@@ -20,7 +20,7 @@
         <header class="hero-bg py-8 md:py-12 relative z-20 shadow-xl">
             <div class="container mx-auto px-4">
                 <h1 class="text-center text-6xl font-extrabold text-white text-shadow-sm text-shadow-black mt-2">TrackMap</h1>
-                <h2 class="text-center text-4xl font-regular text-white text-shadow-sm text-shadow-black mt-2">Instant IP Geolocation</h2>
+                <h2 class="text-center text-4xl font-regular text-white text-shadow-sm text-shadow-black mt-2">Find Your IP Geolocation</h2>
 
                 <!-- Search Input and Button -->
                 <div class="mt-8 flex justify-center">
@@ -67,8 +67,10 @@
 
         <!-- Map  Section (Lower Half) -->
         <main class="flex-grow pt-24 md:pt-28">
-            <div class="justify-center text-gray-500 text-xl font-medium text-center mb-2">
-            <h3 class="text-2xl">Here's your IP!</h3>
+            <div id="success-location" class="justify-center text-gray-500 text-xl font-medium text-center mb-2 hidden">
+            <h3 class="text-2xl">Your IP Location is:</h3>
+            <p class="mt-1 text-xs">The accuracy of IP location tracking may vary depending on factors such as network configuration, proxy usage, or data source limitations.<span class="text-red-500">*</span></p>
+            
             </div>
 
 

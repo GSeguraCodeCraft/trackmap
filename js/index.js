@@ -1,6 +1,7 @@
 /* Variables */
 const search_form = document.querySelector('.header_form');
 const errorMessage = document.querySelector('#errorMessage');
+const successMessage = document.querySelector('#success-location');
 let lastRequestTime = 0;
 const RATE_LIMIT_MS = 1000;
 const part1 = 'at_szc6Zpm7';
@@ -35,6 +36,7 @@ function getValue(e) {
     const value = sanitizeInput(document.querySelector('#ipInput').value.trim());
     if (isValidIPv4(value)) {
         errorMessage.classList.add('hidden');
+        successMessage.classList.remove('hidden');
         search_Ip_Address(value);
     } else {
         showError('Please enter a valid IP address.');
@@ -51,6 +53,7 @@ function getValue(e) {
     const response = await request.json();
 
     errorMessage.classList.add('hidden');
+    successMessage.classList.remove('hidden');
     /* Update the UI on the page */
     const {location, ip, isp } = response;
 
@@ -147,4 +150,5 @@ function isValidIPv4(ipAddress) {
             function showError(message) {
                 errorMessage.textContent = message;
                 errorMessage.classList.remove('hidden');
+                successMessage.classList.add('hidden');
             }
