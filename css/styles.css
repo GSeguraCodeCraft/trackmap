@@ -6,7 +6,7 @@
         /* Custom utility for the overlay */
         .hero-bg {
             /* NEW BACKGROUND IMAGE URL: Abstract network and map visualization */
-            background-image: url('/images/hero-banner.jpg');
+            background-image: url('../images/hero-banner.jpg');
             background-size: cover;
             background-position: center;
         }
