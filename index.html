@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Address Tracker</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="css/styles.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+</head>
+<body>
+
+    <div class="min-h-screen flex flex-col">
+
+        <!-- Header and Search Section -->
+        <header class="hero-bg py-8 md:py-12 relative z-20 shadow-xl">
+            <div class="container mx-auto px-4">
+                <h1 class="text-center text-6xl font-extrabold text-white text-shadow-sm text-shadow-black mt-2">TrackMap</h1>
+                <h2 class="text-center text-4xl font-regular text-white text-shadow-sm text-shadow-black mt-2">Instant IP Geolocation</h2>
+
+                <!-- Search Input and Button -->
+                <div class="mt-8 flex justify-center">
+                    <div class="w-full max-w-xl flex shadow-2xl rounded-xl overflow-hidden">
+                        <form class="header_form">
+                        <input type="text" id="ipInput" placeholder="Enter IP Address or Domain (e.g., 8.8.8.8)"
+                               class="w-full p-4 text-gray-700 focus:outline-none text-lg rounded-l-xl"
+                               value="8.8.8.8">
+                        
+                        <button id="searchButton"
+                                class="bg-indigo-600 hover:bg-indigo-700 transition duration-300 text-white p-4 text-lg font-semibold rounded-r-xl flex items-center justify-center">
+                            <span id="buttonText">Search</span>
+                            <div id="loadingSpinner" class="spinner hidden"></div>
+                        </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Results/Data Display Card -->
+                <div id="dataCard" class="mt-8 md:mt-10 bg-white p-6 md:p-8 rounded-xl shadow-2xl mx-auto max-w-4xl transform translate-y-1/2">
+                    <div id="resultContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-6 md:gap-x-4">
+                        <!-- Data will be dynamically inserted here -->
+                        <div class="data-item border-b lg:border-r lg:border-b-0 pb-4 lg:pb-0">
+                            <h3 class="text-xs font-bold uppercase text-gray-500 tracking-widest">IP ADDRESS</h3>
+                            <p id="ip-address" class="text-2xl font-semibold text-gray-800 mt-1 truncate">Loading...</p>
+                        </div>
+                        <div class="data-item border-b sm:border-r sm:border-b-0 pb-4 sm:pb-0">
+                            <h3 class="text-xs font-bold uppercase text-gray-500 tracking-widest">LOCATION</h3>
+                            <p id="location" class="text-2xl font-semibold text-gray-800 mt-1 truncate">Loading...</p>
+                        </div>
+                        <div class="data-item border-b lg:border-r lg:border-b-0 pb-4 lg:pb-0">
+                            <h3 class="text-xs font-bold uppercase text-gray-500 tracking-widest">TIMEZONE</h3>
+                            <p id="utc" class="text-2xl font-semibold text-gray-800 mt-1 truncate">Loading...</p>
+                        </div>
+                        <div class="data-item">
+                            <h3 class="text-xs font-bold uppercase text-gray-500 tracking-widest">ISP</h3>
+                            <p id="isp" class="text-2xl font-semibold text-gray-800 mt-1 truncate">Loading...</p>
+                        </div>
+                    </div>
+                    <p id="errorMessage" class="hidden text-red-500 mt-4 text-center font-medium"></p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Map  Section (Lower Half) -->
+        <main class="flex-grow pt-24 md:pt-28">
+            <div class="justify-center text-gray-500 text-xl font-medium text-center mb-2">
+            <h3 class="text-2xl">Here's your IP!</h3>
+            </div>
+
+
+            <div class="map" id="map"></div>
+        </main>
+    </div>
+
+
+<script type="module" src="js/index.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
